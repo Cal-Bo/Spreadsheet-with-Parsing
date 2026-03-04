@@ -1,1 +1,1 @@
-# Spreadsheet-with-Parsing
+I hope to learn more about better repository usage and deepen my knowledge about programming languages

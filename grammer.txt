@@ -1,0 +1,42 @@
+levelN = INT
+       | FLOAT
+       | STRING
+       | BOOLEAN
+       |[_,_]
+       |#[_,_]
+       | MIN
+       | MAX
+       | MEAN
+       | SUM
+level1 = EXPONET levelN
+       | levelN
+level2 = NEGATION level1
+       | LOGICAL_NOT level1
+       | BITWISE_NOT level1
+       | level N
+level3 = level3 ADDITION level2
+       | level3 SUBTRACTION level2
+       | level2
+level4 = level4 MULTIPLY level3
+       | level4 DIVIDE level3
+       | level4 MODULO level3
+       | level3
+level5 = level5 BITWISE_AND level4
+       | level5 BITWISE_OR level4
+       | level5 BITWISE_XOR level4
+       | level5 BITWISE_LShift level4
+       | level5 BITWISE_RShift level4
+       | level4
+level6 = level6 EQUALS level5
+       | level6 NOT_EQUALS level5
+       | level6 LESS_THAN level5
+       | level6 LESS_THAN_OR_EQUAL level5
+       | level6 GREATER_THAN level5
+       | level6 GREATER_THAN_OR_EQUAL level5
+       | level5
+level7 = level7 LOGICAL_AND level6
+       | level7 LOGICAL_OR level6
+       | level6
+level8 = level8 FLOAT_CAST level7
+       | level8 INT_CAST level7
+       | level7
